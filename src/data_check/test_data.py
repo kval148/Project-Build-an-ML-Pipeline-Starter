@@ -84,6 +84,31 @@ def test_similar_neigh_distrib(data: pd.DataFrame, ref_data: pd.DataFrame, kl_th
     assert np.isfinite(kl_div) and kl_div < kl_threshold
 
 
-########################################################
-# Implement here test_row_count and test_price_range   #
-########################################################
+def test_row_count(data: pd.DataFrame):
+    """
+    Checks that the dataset is a reasonable size
+
+    Args:
+        data: Input DataFrame to test
+    """
+
+    assert 15000 < data.shape[0] < 1000000 , (
+        "dataset should be between 15000 and 1000000 rows, but " \
+        f"has {data.shape[0]} rows"
+    )
+
+def test_price_range(data: pd.DataFrame, min_price: float, max_price: float):
+    """
+    Checks that the price range is between min_price and max_price
+    Args:
+        data: Input DataFrame to test
+        min_price: Minimum house price to be considered
+        max_price: Maximum house price to be considered
+    """
+
+    assert data["price"].between(min_price, max_price) , (
+        "Dataset contains values in column price outside of expected range\n"
+        f"Expected value range: {min_price} to {max_price}\n"
+        f"Dataset min_price: {data["price"].min()}\n"
+        f"Dataset max_price: {data["price"].max()}"
+    )
