@@ -1,3 +1,10 @@
+### Katherine Austin Udacity Project Links:
+
+[GitHub Repo](https://github.com/kval148/Project-Build-an-ML-Pipeline-Starter) |
+[Weights & Biases](https://wandb.ai/kval148-western-governors-university/nyc_airbnb)
+
+-------------
+
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
 You are working for a property management company renting rooms and properties for short periods of 
 time on various rental platforms. You need to estimate the typical price for a given property based 
